@@ -32,7 +32,8 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css && vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"prepare": "npm run build"
 	},
 	"dependencies": {
 		"@11labs/client": "^0.1.4",
