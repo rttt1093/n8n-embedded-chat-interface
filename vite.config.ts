@@ -31,9 +31,10 @@ export default defineConfig(({ mode }) => {
 		],
 		build: {
 			lib: {
-				entry: 'src/main.ts',
+				entry: 'src/prod.ts',
 				name: 'N8nEmbeddedChat',
-				fileName: 'n8n-embedded-chat'
+				fileName: 'n8n-embedded-chat',
+				formats: ['es', 'umd']
 			},
 			rollupOptions: {}
 		},
