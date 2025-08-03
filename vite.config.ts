@@ -31,16 +31,11 @@ export default defineConfig(({ mode }) => {
 		],
 		build: {
 			lib: {
-				// ライブラリのエントリーポイント
 				entry: 'src/main.ts',
-				// UMDビルド時に使用されるグローバル変数名
 				name: 'N8nEmbeddedChat',
-				// 出力されるファイル名のプレフィックス
 				fileName: 'n8n-embedded-chat'
 			},
-			rollupOptions: {
-				// ここでは外部依存関係の除外は不要です
-			}
+			rollupOptions: {}
 		},
 		resolve: {
 			alias: {
