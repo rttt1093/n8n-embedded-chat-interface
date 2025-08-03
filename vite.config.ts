@@ -30,19 +30,17 @@ export default defineConfig(({ mode }) => {
 			Icons({}),
 		],
 		build: {
-			outDir: "output",
-			emptyOutDir: false,
-			cssCodeSplit: false,
-
 			lib: {
-				entry: "src/prod.ts",
-				formats: ["umd"],
-				name: "n8n-embedded-chat-interface",
-				fileName: () => "index.js",
+				// ライブラリのエントリーポイント
+				entry: 'src/main.ts',
+				// UMDビルド時に使用されるグローバル変数名
+				name: 'N8nEmbeddedChat',
+				// 出力されるファイル名のプレフィックス
+				fileName: 'n8n-embedded-chat'
 			},
 			rollupOptions: {
-				external: [],
-			},
+				// ここでは外部依存関係の除外は不要です
+			}
 		},
 		resolve: {
 			alias: {

@@ -1,11 +1,18 @@
 {
 	"name": "n8n-embedded-chat-interface",
-	"version": "0.4.0",
 	"private": false,
+	"version": "1.0.0",
 	"type": "module",
-	"main": "output/index.js",
+	"main": "./dist/n8n-embedded-chat.umd.cjs",
+	"module": "./dist/n8n-embedded-chat.js",
+	"exports": {
+		".": {
+			"import": "./dist/n8n-embedded-chat.js",
+			"require": "./dist/n8n-embedded-chat.umd.cjs"
+		}
+	},
 	"files": [
-		"output"
+		"dist"
 	],
 	"repository": {
 		"type": "git",
@@ -22,15 +29,9 @@
 	"author": "symbiosika",
 	"license": "Apache-2.0",
 	"scripts": {
-		"dev": "run-p tailwind:watch vite:dev",
-		"vite:dev": "vite",
-		"tailwind:watch": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --watch",
-		"build": "run-p type-check \"build-only {@}\" --",
-		"preview": "vite preview",
-		"build-only": "vite build",
-		"type-check": "vue-tsc --build",
-		"format": "prettier --write src/",
-		"demo": "vite build && npx http-server . -p 8000"
+		"dev": "vite",
+		"build": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css && vite build",
+		"preview": "vite preview"
 	},
 	"dependencies": {
 		"@11labs/client": "^0.1.4",
