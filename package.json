@@ -9,7 +9,8 @@
 		".": {
 			"import": "./dist/n8n-embedded-chat.js",
 			"require": "./dist/n8n-embedded-chat.umd.cjs"
-		}
+		},
+		"./style.css": "./dist/n8n-embedded-chat.css"
 	},
 	"files": [
 		"dist"
