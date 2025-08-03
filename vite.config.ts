@@ -30,19 +30,13 @@ export default defineConfig(({ mode }) => {
 			Icons({}),
 		],
 		build: {
-			outDir: "output",
-			emptyOutDir: false,
-			cssCodeSplit: false,
-
 			lib: {
-				entry: "src/prod.ts",
-				formats: ["umd"],
-				name: "n8n-embedded-chat-interface",
-				fileName: () => "index.js",
+				entry: 'src/prod.ts',
+				name: 'N8nEmbeddedChat',
+				fileName: 'n8n-embedded-chat',
+				formats: ['es', 'umd']
 			},
-			rollupOptions: {
-				external: [],
-			},
+			rollupOptions: {}
 		},
 		resolve: {
 			alias: {
